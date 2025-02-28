@@ -6,11 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "jest",
     "preview": "vite preview",
     "format:check": "prettier --check .",
     "lint": "npm run lint --workspaces"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-ts-webcompat-resolver": "^1.0.0",
+    "ts-jest": "^29.2.6",
     "typescript": "~5.7.2",
     "vite": "^6.2.0"
   },

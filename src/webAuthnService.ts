@@ -1,3 +1,4 @@
+import { randomBytes } from 'crypto';
 //  convert ArrayBuffer to Base64 string
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const binary = String.fromCharCode.apply(null, new Uint8Array(buffer) as any);
@@ -15,9 +16,10 @@ export interface CredentialAssertion {
 }
 
 export class WebAuthnService {
+  salt: ArrayBuffer;
   //  generate a secure salt.
   generateSalt(): Uint8Array {
-    return crypto.getRandomValues(new Uint8Array(16));
+    return new Uint8Array(randomBytes(16));
   }
 
   // Triggered by a user gesture (e.g. button click)
