@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1740740739256" clover="3.2.0">
+  <project timestamp="1740740739257" name="All files">
+    <metrics statements="138" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="18" coveredmethods="0" elements="173" coveredelements="0" complexity="0" loc="138" ncloc="138" packages="1" files="6" classes="6"/>
+    <file name="keyDerivationService.ts" path="/home/arthur/Desktop/web-auth-lib/src/keyDerivationService.ts">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+    </file>
+    <file name="lib.ts" path="/home/arthur/Desktop/web-auth-lib/src/lib.ts">
+      <metrics statements="82" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="34" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="36" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="57" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
+      <line num="65" count="0" type="stmt"/>
+      <line num="87" count="0" type="stmt"/>
+      <line num="88" count="0" type="stmt"/>
+      <line num="89" count="0" type="stmt"/>
+      <line num="92" count="0" type="stmt"/>
+      <line num="93" count="0" type="stmt"/>
+      <line num="95" count="0" type="stmt"/>
+      <line num="96" count="0" type="stmt"/>
+      <line num="102" count="0" type="stmt"/>
+      <line num="103" count="0" type="stmt"/>
+      <line num="104" count="0" type="stmt"/>
+      <line num="107" count="0" type="stmt"/>
+      <line num="108" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="109" count="0" type="stmt"/>
+      <line num="110" count="0" type="stmt"/>
+      <line num="112" count="0" type="stmt"/>
+      <line num="114" count="0" type="stmt"/>
+      <line num="119" count="0" type="stmt"/>
+      <line num="120" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="121" count="0" type="stmt"/>
+      <line num="122" count="0" type="stmt"/>
+      <line num="123" count="0" type="stmt"/>
+      <line num="125" count="0" type="stmt"/>
+      <line num="127" count="0" type="stmt"/>
+      <line num="142" count="0" type="stmt"/>
+      <line num="143" count="0" type="stmt"/>
+      <line num="144" count="0" type="stmt"/>
+      <line num="147" count="0" type="stmt"/>
+      <line num="154" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="156" count="0" type="stmt"/>
+      <line num="158" count="0" type="stmt"/>
+      <line num="159" count="0" type="stmt"/>
+      <line num="160" count="0" type="stmt"/>
+      <line num="161" count="0" type="stmt"/>
+      <line num="165" count="0" type="stmt"/>
+      <line num="167" count="0" type="stmt"/>
+      <line num="168" count="0" type="stmt"/>
+      <line num="173" count="0" type="stmt"/>
+      <line num="174" count="0" type="stmt"/>
+      <line num="175" count="0" type="stmt"/>
+      <line num="178" count="0" type="stmt"/>
+      <line num="181" count="0" type="stmt"/>
+      <line num="183" count="0" type="stmt"/>
+      <line num="184" count="0" type="stmt"/>
+      <line num="193" count="0" type="stmt"/>
+      <line num="194" count="0" type="stmt"/>
+      <line num="198" count="0" type="stmt"/>
+      <line num="199" count="0" type="stmt"/>
+      <line num="202" count="0" type="stmt"/>
+      <line num="205" count="0" type="stmt"/>
+      <line num="206" count="0" type="stmt"/>
+    </file>
+    <file name="localDBService.ts" path="/home/arthur/Desktop/web-auth-lib/src/localDBService.ts">
+      <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+    </file>
+    <file name="main.ts" path="/home/arthur/Desktop/web-auth-lib/src/main.ts">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+    </file>
+    <file name="vite-env.d.ts" path="/home/arthur/Desktop/web-auth-lib/src/vite-env.d.ts">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+    </file>
+    <file name="webAuthnService.ts" path="/home/arthur/Desktop/web-auth-lib/src/webAuthnService.ts">
+      <metrics statements="26" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="32" count="0" type="cond" truecount="0" falsecount="3"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="37" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="58" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="63" count="0" type="stmt"/>
+      <line num="64" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="65" count="0" type="stmt"/>
+      <line num="69" count="0" type="stmt"/>
+      <line num="70" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="71" count="0" type="stmt"/>
+      <line num="73" count="0" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="80" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
