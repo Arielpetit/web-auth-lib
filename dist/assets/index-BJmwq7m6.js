@@ -5,7 +5,7 @@
         <img src="${I}" class="logo" alt="logo" />
       </a>
       <h1 class="text-center">WebAuthn PRF</h1>
-      <div class="flex justify-center gap-6">
+      <div class="flex justify-center gap-6">   
         <button id="registerBtn" type="button" class="btn btn-primary btn-soft">Register</button>
         <button id="authenticateBtn" type="button" class="btn btn-primary btn-soft">Authenticate</button>
         <button id="logoutBtn" type="button" class="btn btn-primary btn-soft">Logout</button>
