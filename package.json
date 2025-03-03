@@ -11,6 +11,7 @@
     "format:check": "prettier --check .",
     "lint": "npm run lint --workspaces"
   },
+  
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-typescript": "^7.26.0",
