@@ -1,4 +1,3 @@
-// keyDerivationService.ts
 export interface EncryptionKey {
   key: CryptoKey;
 }

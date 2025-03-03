@@ -20,7 +20,6 @@ export class WebAuthnService {
     return crypto.getRandomValues(new Uint8Array(16));
   }
 
-  // Triggered by a user gesture (e.g. button click)
   async register(
     options: PublicKeyCredentialCreationOptions,
   ): Promise<CredentialRegistration> {
@@ -32,7 +31,7 @@ export class WebAuthnService {
         throw new Error("Registration failed: No credential returned.");
       }
 
-      // Generate a unique salt for this registration.
+      // Generate a unique salt for registration.
       const salt = this.generateSalt();
 
       // Store salt  in localStorage
