@@ -35,7 +35,7 @@ export class WebAuthnService {
       // Generate a unique salt for this registration.
       const salt = this.generateSalt();
 
-      // Store salt securely in localStorage
+      // Store salt  in localStorage
       localStorage.setItem(
         "registrationSalt",
         arrayBufferToBase64(salt.buffer),
