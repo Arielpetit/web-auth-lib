@@ -1,5 +1,5 @@
 import { LocalDBService } from "../localDBService";
-import { KeyDerivationService } from "../keyDerivationService";
+import { KeyDerivationService } from "../lib/keyDerivationService";
 
 describe("LocalDBService", () => {
   let localDBService: LocalDBService;

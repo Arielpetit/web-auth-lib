@@ -1,6 +1,6 @@
 import "./style.css";
 import logo from "/icon.jpg";
-import { main } from "./lib.ts";
+import { main } from "./lib/lib";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="container mx-auto px-4 py-8 flex flex-col items-center gap-8">
@@ -21,6 +21,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <button id="saveMessageBtn" class="btn btn-primary">Save Message</button>
 
       <!-- Display saved messages -->
+      <ul id="messageList" class="w-full overflow-scroll"></ul>
+      <!-- Display un-encryptes messages -->
       <ul id="messageList" class="w-full overflow-scroll"></ul>
     </div>
   </div>

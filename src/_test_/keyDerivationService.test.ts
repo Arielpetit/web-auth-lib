@@ -1,4 +1,4 @@
-import { KeyDerivationService } from "../keyDerivationService";
+import { KeyDerivationService } from "../lib/keyDerivationService";
 
 describe("KeyDerivationService", () => {
   let keyDerivationService: KeyDerivationService;

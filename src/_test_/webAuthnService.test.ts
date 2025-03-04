@@ -1,4 +1,4 @@
-import { WebAuthnService } from "../webAuthnService";
+import { WebAuthnService } from "../lib/webAuthnService";
 
 describe("WebAuthnService", () => {
   let webAuthnService: WebAuthnService;

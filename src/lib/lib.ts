@@ -30,7 +30,7 @@ function loadMessages() {
 }
 
 // Save a message to localStorage
-async function saveMessage() {
+export async function saveMessage() {
   const input = document.querySelector<HTMLInputElement>("#messageInput")!;
   const message = input.value.trim();
   if (message) {
@@ -59,7 +59,7 @@ async function saveMessage() {
 }
 
 // Register function
-async function handleRegister(): Promise<void> {
+export async function handleRegister(): Promise<void> {
   const webAuthnService = new WebAuthnService();
 
   const regOptions: PublicKeyCredentialCreationOptions = {
@@ -98,7 +98,7 @@ async function handleRegister(): Promise<void> {
 }
 
 // Authenticate function
-async function handleAuthenticate(): Promise<void> {
+export async function handleAuthenticate(): Promise<void> {
   const webAuthnService = new WebAuthnService();
   const keyService = new KeyDerivationService();
   const localDB = new LocalDBService();
@@ -186,13 +186,15 @@ async function handleAuthenticate(): Promise<void> {
 }
 
 // Logout function
-function handleLogout(): void {
+export function handleLogout(): void {
   // localStorage.removeItem("credentialId");
   // localStorage.removeItem("registrationSalt");
   // localStorage.removeItem("messages");
   console.log("User logged out. Credential and messages removed.");
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
+
+// import { handleRegister, handleAuthenticate, saveMessage, handleLogout} from "web-auth-prf1";
 
 // Main function to set up event listeners
 export async function main(): Promise<void> {
