@@ -1,8 +1,10 @@
 {
-  "name": "web-auth-prf1",
+  "name": "@adorsys-gis/web-auth-prf",
   "private": false,
-  "version": "1.0.0",
-  "type": "module",
+  "version": "1.0.1",
+  "type": "commonjs",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.lib.json",
@@ -24,11 +26,23 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "@adorsys-gis/web-auth-prf": "^1.0.1",
     "prettier": "^3.5.2",
-    "web-auth-prf1": "^1.0.0"
+    "web-auth-prf2": "^1.0.4"
   },
-  "description": "",
-  "keywords": [],
-  "author": "Ndefokou",
+  "description": "A WebAuthn library implementing password-based key derivation functions (PRF) for secure authentication and encryption",
+  "keywords": [
+    "webauthn",
+    "authentication",
+    "security",
+    "cryptography",
+    "prf",
+    "key-derivation",
+    "encryption",
+    "passwordless",
+    "biometric",
+    "typescript"
+  ],
+  "author": "adorsys",
   "license": "ISC"
 }

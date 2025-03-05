@@ -7,7 +7,7 @@ A lightweight TypeScript library that implements WebAuthn with PRF (Pseudo-Rando
 Install the package using npm:
 
 ```bash
-# npm install webauthn-prf-example
+npm install @adorsys-gis/web-auth-prf
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Install the package using npm:
 To register a new user, call the `handleRegister` function:
 
 ```javascript
-// import { handleRegister } from "webauthn-prf-example";
+import { handleRegister } from "@adorsys-gis/web-auth-prf";
 
 document.getElementById("registerBtn").addEventListener("click", async () => {
   await handleRegister();
@@ -29,7 +29,7 @@ document.getElementById("registerBtn").addEventListener("click", async () => {
 To authenticate an existing user, call the `handleAuthenticate` function:
 
 ```javascript
-// import { handleAuthenticate } from "webauthn-prf-example";
+import { handleAuthenticate } from "@adorsys-gis/web-auth-prf";
 
 document
   .getElementById("authenticateBtn")
@@ -43,7 +43,7 @@ document
 To save and retrieve encrypted messages, use the `saveMessage` and `loadMessages` functions:
 
 ```javascript
-// import { saveMessage } from "webauthn-prf-example";
+import { saveMessage } from "@adorsys-gis/web-auth-prf";
 
 document
   .getElementById("saveMessageBtn")
@@ -57,7 +57,7 @@ document
 To log out and clear stored credentials and messages, use the `handleLogout` function:
 
 ```javascript
-// import { handleLogout } from "webauthn-prf-example";
+import { handleLogout } from "@adorsys-gis/web-auth-prf";
 
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   await handleLogout();

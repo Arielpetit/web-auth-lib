@@ -194,7 +194,6 @@ export function handleLogout(): void {
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
 
-// import { handleRegister, handleAuthenticate, saveMessage, handleLogout} from "web-auth-prf1";
 
 // Main function to set up event listeners
 export async function main(): Promise<void> {
