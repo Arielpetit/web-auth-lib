@@ -98,7 +98,7 @@ export async function handleRegister(): Promise<void> {
 }
 
 // Authenticate function
-export async function handleAuthenticate(): Promise<void> {
+export async function handleAuthenticate(): Promise<string | undefined> {
   const webAuthnService = new WebAuthnService();
   const keyService = new KeyDerivationService();
   const localDB = new LocalDBService();
@@ -193,7 +193,6 @@ export function handleLogout(): void {
   console.log("User logged out. Credential and messages removed.");
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
-
 
 // Main function to set up event listeners
 export async function main(): Promise<void> {
