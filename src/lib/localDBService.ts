@@ -13,7 +13,7 @@ export class LocalDBService implements LocalDB {
     try {
       const encoder = new TextEncoder();
       const data = encoder.encode(plaintext);
-      
+
       // Generate a unique IV for each encryption.
       const iv = crypto.getRandomValues(new Uint8Array(12));
       const ciphertext = await crypto.subtle.encrypt(

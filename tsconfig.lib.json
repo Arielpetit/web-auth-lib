@@ -1,12 +1,12 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-      "outDir": "./dist",
-      "composite": true,
-      "declaration": true,
-      "module": "commonjs",
-      "types": ["node"]
-    },
-    "include": ["src/**/*.ts", "src/index.ts"],
-    "exclude": ["jest.config.js", "src/**/*.spec.ts", "src/**/*.test.ts", ]
-  }
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "composite": true,
+    "declaration": true,
+    "module": "commonjs",
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "src/index.ts"],
+  "exclude": ["jest.config.js", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

@@ -10,8 +10,10 @@
     "build": "tsc -p tsconfig.lib.json",
     "test": "jest",
     "preview": "vite preview",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "npm run lint"
+    "lint": "npm run lint",
+    "lint:fix": "npm run lint --fix"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
