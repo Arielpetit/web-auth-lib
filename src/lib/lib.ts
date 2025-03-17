@@ -98,7 +98,7 @@ export async function handleRegister(): Promise<void> {
 }
 
 // Authenticate function
-export async function handleAuthenticate(): Promise<string | undefined> {
+export async function handleAuthenticate(): Promise<string[]> {
   const webAuthnService = new WebAuthnService();
   const keyService = new KeyDerivationService();
   const localDB = new LocalDBService();
@@ -109,7 +109,7 @@ export async function handleAuthenticate(): Promise<string | undefined> {
     console.error("No stored credentialId found.");
     document.getElementById("error")!.textContent =
       "No stored credentialId found.";
-    return;
+    return [];
   }
   const storedCredentialId: ArrayBuffer = base64ToUint8Array(
     storedCredentialIdBase64,
@@ -120,7 +120,7 @@ export async function handleAuthenticate(): Promise<string | undefined> {
   if (!storedSaltBase64) {
     console.error("No stored salt found.");
     document.getElementById("error")!.textContent = "No stored salt found.";
-    return;
+    return [];
   }
   const storedSalt: ArrayBuffer = base64ToUint8Array(storedSaltBase64);
 
@@ -179,10 +179,14 @@ export async function handleAuthenticate(): Promise<string | undefined> {
 
     // Load and display saved messages after successful authentication
     loadMessages();
+
+    return decryptedMessages;
   } catch (error) {
     console.error("Error in process:", (error as Error).message);
     document.getElementById("error")!.textContent = (error as Error).message;
   }
+
+  return [];
 }
 
 // Logout function

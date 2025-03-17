@@ -1,5 +1,5 @@
-import "style.css";
-import logo from "./icon.jpg";
+import "./style.css";
+const logo = "/icon.jpg";
 import { main } from "./lib/lib";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
