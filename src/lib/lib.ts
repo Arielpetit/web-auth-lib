@@ -180,7 +180,7 @@ export async function handleAuthenticate(): Promise<string[]> {
     // Load and display saved messages after successful authentication
     loadMessages();
 
-  return decryptedMessages;
+    return decryptedMessages;
   } catch (error) {
     console.error("Error in process:", (error as Error).message);
     document.getElementById("error")!.textContent = (error as Error).message;
