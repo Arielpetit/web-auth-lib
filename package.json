@@ -1,7 +1,7 @@
 {
   "name": "@adorsys-gis/web-auth-prf",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "commonjs",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
@@ -12,14 +12,16 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "npm run lint",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-typescript": "^7.26.0",
     "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
     "babel-jest": "^29.7.0",
+    "eslint": "^9.22.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-ts-webcompat-resolver": "^1.0.0",
