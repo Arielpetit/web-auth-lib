@@ -1,4 +1,4 @@
-import { LocalDBService } from "../localDBService";
+import { LocalDBService } from "../lib/localDBService";
 import { KeyDerivationService } from "../lib/keyDerivationService";
 
 describe("LocalDBService", () => {

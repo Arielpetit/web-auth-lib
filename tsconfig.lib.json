@@ -8,5 +8,5 @@
     "types": ["node"]
   },
   "include": ["src/**/*.ts", "src/index.ts"],
-  "exclude": ["jest.config.js", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.mjs", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }
