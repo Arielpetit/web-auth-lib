@@ -85,7 +85,6 @@ export async function handleRegister(): Promise<void> {
 
   try {
     const registration = await webAuthnService.register(regOptions);
-    console.log("Credential registered:", registration.credentialId);
 
     // Convert credentialId to Base64 and store in local storage.
     const credentialIdBase64 = arrayBufferToBase64(registration.credentialId);
@@ -173,8 +172,6 @@ export async function handleAuthenticate(): Promise<string[]> {
     messageList.innerHTML = decryptedMessages
       .map((msg: string) => `<li>${msg}</li>`)
       .join("");
-
-    console.log("Decrypted messages:", decryptedMessages);
 
     // Pass decrypted messages to loadMessages
     loadMessages(decryptedMessages);
