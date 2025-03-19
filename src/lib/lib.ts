@@ -21,10 +21,9 @@ function base64ToUint8Array(base64: string): Uint8Array {
 }
 
 // Load messages from localStorage and display them
-function loadMessages() {
-  const messages = JSON.parse(localStorage.getItem("messages") || "[]");
+function loadMessages(decryptedMessages: string[] = []) {
   const messageList = document.querySelector("#messageList")!;
-  messageList.innerHTML = messages
+  messageList.innerHTML = decryptedMessages
     .map((msg: string) => `<li>${msg}</li>`)
     .join("");
 }
@@ -177,16 +176,15 @@ export async function handleAuthenticate(): Promise<string[]> {
 
     console.log("Decrypted messages:", decryptedMessages);
 
-    // Load and display saved messages after successful authentication
-    loadMessages();
+    // Pass decrypted messages to loadMessages
+    loadMessages(decryptedMessages);
 
     return decryptedMessages;
   } catch (error) {
     console.error("Error in process:", (error as Error).message);
     document.getElementById("error")!.textContent = (error as Error).message;
+    return [];
   }
-
-  return [];
 }
 
 // Logout function
