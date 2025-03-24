@@ -74,10 +74,6 @@ export async function handleRegister(): Promise<void> {
       { type: "public-key", alg: -257 }, // RS256
     ],
     timeout: 60000,
-    authenticatorSelection: {
-      authenticatorAttachment: "cross-platform",
-      residentKey: "required",
-    },
     extensions: {
       prf: { eval: { first: new Uint8Array(32).fill(1) } },
     },
@@ -186,9 +182,9 @@ export async function handleAuthenticate(): Promise<string[]> {
 
 // Logout function
 export function handleLogout(): void {
-  // localStorage.removeItem("credentialId");
-  // localStorage.removeItem("registrationSalt");
-  // localStorage.removeItem("messages");
+  localStorage.removeItem("credentialId");
+  localStorage.removeItem("registrationSalt");
+  localStorage.removeItem("messages");
   console.log("User logged out. Credential and messages removed.");
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
