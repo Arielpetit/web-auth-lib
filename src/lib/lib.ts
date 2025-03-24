@@ -2,7 +2,7 @@ import { WebAuthnService } from "./webAuthnService";
 import { KeyDerivationService } from "./keyDerivationService";
 import { LocalDBService } from "./localDBService";
 
-const domainNameId = "localhost";
+const domainNameId = window.location.hostname;
 
 // Convert ArrayBuffer to Base64 and vice versa.
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
