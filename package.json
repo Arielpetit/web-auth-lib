@@ -1,7 +1,7 @@
 {
   "name": "@adorsys-gis/web-auth-prf",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "commonjs",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",

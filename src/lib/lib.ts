@@ -182,9 +182,9 @@ export async function handleAuthenticate(): Promise<string[]> {
 
 // Logout function
 export function handleLogout(): void {
-  localStorage.removeItem("credentialId");
-  localStorage.removeItem("registrationSalt");
-  localStorage.removeItem("messages");
+  // localStorage.removeItem("credentialId");
+  // localStorage.removeItem("registrationSalt");
+  // localStorage.removeItem("messages");
   console.log("User logged out. Credential and messages removed.");
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
