@@ -74,6 +74,11 @@ export async function handleRegister(): Promise<void> {
       { type: "public-key", alg: -257 }, // RS256
     ],
     timeout: 60000,
+    authenticatorSelection: {
+      authenticatorAttachment: "platform", 
+      userVerification: "required", 
+    },
+    attestation: "direct",
     extensions: {
       prf: { eval: { first: new Uint8Array(32).fill(1) } },
     },
@@ -126,7 +131,6 @@ export async function handleAuthenticate(): Promise<string[]> {
         id: storedCredentialId,
       },
     ],
-    timeout: 60000,
     rpId: domainNameId,
     extensions: {
       prf: { eval: { first: new Uint8Array(32).fill(1) } },
