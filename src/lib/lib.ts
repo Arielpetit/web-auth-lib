@@ -78,7 +78,7 @@ export async function handleRegister(): Promise<void> {
       authenticatorAttachment: "platform", 
       userVerification: "required", 
     },
-    attestation: "direct",
+    attestation: "none",
     extensions: {
       prf: { eval: { first: new Uint8Array(32).fill(1) } },
     },
