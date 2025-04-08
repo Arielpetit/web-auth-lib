@@ -92,7 +92,6 @@ export async function handleRegister(): Promise<void> {
 }
 
 export async function handleAuthenticate(): Promise<string[]> {
-  const webAuthnService = new WebAuthnService();
   const keyService = new KeyDerivationService();
   const localDB = new LocalDBService();
 
