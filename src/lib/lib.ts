@@ -4,7 +4,6 @@ import { LocalDBService } from "./localDBService";
 
 const domainNameId = window.location.hostname;
 
-// Convert ArrayBuffer to Base64 and vice versa.
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const binary = String.fromCharCode(...new Uint8Array(buffer));
   return window.btoa(binary);
@@ -20,7 +19,6 @@ function base64ToUint8Array(base64: string): Uint8Array {
   return bytes;
 }
 
-// Load messages from localStorage and display them
 function loadMessages(decryptedMessages: string[] = []) {
   const messageList = document.querySelector("#messageList")!;
   messageList.innerHTML = decryptedMessages
@@ -28,7 +26,6 @@ function loadMessages(decryptedMessages: string[] = []) {
     .join("");
 }
 
-// Save a message to localStorage
 export async function saveMessage() {
   const input = document.querySelector<HTMLInputElement>("#messageInput")!;
   const message = input.value.trim();
@@ -57,7 +54,6 @@ export async function saveMessage() {
   }
 }
 
-// Register function
 export async function handleRegister(): Promise<void> {
   const webAuthnService = new WebAuthnService();
 
@@ -70,14 +66,14 @@ export async function handleRegister(): Promise<void> {
       displayName: "",
     },
     pubKeyCredParams: [
-      { type: "public-key", alg: -7 }, // ES256
-      { type: "public-key", alg: -257 }, // RS256
+      { type: "public-key", alg: -7 },    // ES256
+      { type: "public-key", alg: -257 },  // RS256
     ],
     timeout: 60000,
     authenticatorSelection: {
       authenticatorAttachment: "platform",
       residentKey: "required",
-      userVerification: "required", 
+      userVerification: "required",
     },
     extensions: {
       prf: { eval: { first: new Uint8Array(32).fill(1) } },
@@ -87,7 +83,6 @@ export async function handleRegister(): Promise<void> {
   try {
     const registration = await webAuthnService.register(regOptions);
 
-    // Convert credentialId to Base64 and store in local storage.
     const credentialIdBase64 = arrayBufferToBase64(registration.credentialId);
     localStorage.setItem("credentialId", credentialIdBase64);
   } catch (error) {
@@ -96,32 +91,26 @@ export async function handleRegister(): Promise<void> {
   }
 }
 
-// Authenticate function
 export async function handleAuthenticate(): Promise<string[]> {
   const webAuthnService = new WebAuthnService();
   const keyService = new KeyDerivationService();
   const localDB = new LocalDBService();
 
-  // Retrieve the credentialId from local storage.
   const storedCredentialIdBase64 = localStorage.getItem("credentialId");
   if (!storedCredentialIdBase64) {
     console.error("No stored credentialId found.");
-    document.getElementById("error")!.textContent =
-      "No stored credentialId found.";
+    document.getElementById("error")!.textContent = "No stored credentialId found.";
     return [];
   }
-  const storedCredentialId: ArrayBuffer = base64ToUint8Array(
-    storedCredentialIdBase64,
-  );
+  const storedCredentialId = base64ToUint8Array(storedCredentialIdBase64);
 
-  // Retrieve the salt from local storage.
   const storedSaltBase64 = localStorage.getItem("registrationSalt");
   if (!storedSaltBase64) {
     console.error("No stored salt found.");
     document.getElementById("error")!.textContent = "No stored salt found.";
     return [];
   }
-  const storedSalt: ArrayBuffer = base64ToUint8Array(storedSaltBase64);
+  const storedSalt = base64ToUint8Array(storedSaltBase64);
 
   const authOptions: PublicKeyCredentialRequestOptions = {
     challenge: crypto.getRandomValues(new Uint8Array(32)).buffer,
@@ -129,6 +118,7 @@ export async function handleAuthenticate(): Promise<string[]> {
       {
         type: "public-key",
         id: storedCredentialId,
+        transports: ["internal"], // 🔐 Built-in biometric auth only
       },
     ],
     timeout: 60000,
@@ -139,10 +129,13 @@ export async function handleAuthenticate(): Promise<string[]> {
   };
 
   try {
-    const assertion = await webAuthnService.authenticate(authOptions);
-    console.log("PRF output received:", assertion.prfResult);
+    const assertion = await navigator.credentials.get({
+      publicKey: authOptions,
+      mediation: "required", // 🔐 Force native auth, no Bitwarden/Google UI
+    }) as PublicKeyCredential & { prfResult?: any };
 
-    // Derive the encryption key using prfResult and stored salt
+    console.log("PRF output received:", assertion?.prfResult);
+
     const encryptionKey = {
       key: await keyService.deriveKey(
         new Uint8Array(32),
@@ -156,7 +149,6 @@ export async function handleAuthenticate(): Promise<string[]> {
       messages.map(async (msg: string) => {
         const encryptedData = new Uint8Array(base64ToUint8Array(msg));
         try {
-          console.log("Attempting to decrypt message:", msg);
           const decryptedMessage = await localDB.decryptData(
             encryptedData.buffer,
             encryptionKey,
@@ -174,9 +166,7 @@ export async function handleAuthenticate(): Promise<string[]> {
       .map((msg: string) => `<li>${msg}</li>`)
       .join("");
 
-    // Pass decrypted messages to loadMessages
     loadMessages(decryptedMessages);
-
     return decryptedMessages;
   } catch (error) {
     console.error("Error in process:", (error as Error).message);
@@ -185,25 +175,18 @@ export async function handleAuthenticate(): Promise<string[]> {
   }
 }
 
-// Logout function
 export function handleLogout(): void {
-  // localStorage.removeItem("credentialId");
-  // localStorage.removeItem("registrationSalt");
-  // localStorage.removeItem("messages");
+  // Uncomment below if you want to clear storage
+  localStorage.removeItem("credentialId");
+  localStorage.removeItem("registrationSalt");
+  localStorage.removeItem("messages");
   console.log("User logged out. Credential and messages removed.");
   document.getElementById("error")!.textContent = "Logged out successfully.";
 }
 
-// Main function to set up event listeners
 export async function main(): Promise<void> {
-  document
-    .getElementById("registerBtn")
-    ?.addEventListener("click", handleRegister);
-  document
-    .getElementById("authenticateBtn")
-    ?.addEventListener("click", handleAuthenticate);
+  document.getElementById("registerBtn")?.addEventListener("click", handleRegister);
+  document.getElementById("authenticateBtn")?.addEventListener("click", handleAuthenticate);
   document.getElementById("logoutBtn")?.addEventListener("click", handleLogout);
-  document
-    .getElementById("saveMessageBtn")
-    ?.addEventListener("click", saveMessage);
+  document.getElementById("saveMessageBtn")?.addEventListener("click", saveMessage);
 }
